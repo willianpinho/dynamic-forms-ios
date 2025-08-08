@@ -1,21 +1,22 @@
-# Created by https://www.toptal.com/developers/gitignore/api/swift
-# Edit at https://www.toptal.com/developers/gitignore?templates=swift
+# ===================================
+# Dynamic Forms iOS - Optimized .gitignore
+# Enterprise-grade iOS project with Swift Package Manager
+# ===================================
 
-### Swift ###
-# Xcode
-#
-# gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
-
-## User settings
+# ===================================
+# Xcode User Settings & Build Artifacts
+# ===================================
 xcuserdata/
-
-## compatibility with Xcode 8 and earlier (ignoring not required starting Xcode 9)
-*.xcscmblueprint
-*.xccheckout
-
-## compatibility with Xcode 3 and earlier (ignoring not required starting Xcode 4)
 build/
 DerivedData/
+
+# User-specific Xcode files
+*.xcuserstate
+*.xcuserdatad
+
+# Xcode compatibility files (legacy)
+*.xcscmblueprint
+*.xccheckout
 *.moved-aside
 *.pbxuser
 !default.pbxuser
@@ -26,63 +27,175 @@ DerivedData/
 *.perspectivev3
 !default.perspectivev3
 
-## Obj-C/Swift specific
+# ===================================
+# Swift & Objective-C Build Artifacts
+# ===================================
 *.hmap
-
-## App packaging
 *.ipa
 *.dSYM.zip
 *.dSYM
 
-## Playgrounds
-timeline.xctimeline
-playground.xcworkspace
+# ===================================
+# Swift Package Manager (SPM)
+# ===================================
+# Keep this section - essential for modular SPM projects
 
-# Swift Package Manager
-# Add this line if you want to avoid checking in source code from Swift Package Manager dependencies.
-Packages/
-Package.pins
-Package.resolved
-*.xcodeproj
-# Xcode automatically generates this directory with a .xcworkspacedata file and xcuserdata
-# hence it is not needed unless you have added a package configuration file to your project
-.swiftpm
-
+# SPM build artifacts
 .build/
+.swiftpm/
 
-# CocoaPods
-# We recommend against adding the Pods directory to your .gitignore. However
-# you should judge for yourself, the pros and cons are mentioned at:
-# https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control
+# SPM resolved packages (should be committed for reproducible builds)
+# Package.resolved - KEEP THIS TRACKED for reproducible builds
+
+# SPM user data
+Package.pins
+
+# Xcode-generated SPM files
+*.xcodeproj
+# Note: Our project structure uses local packages, so we want to track them
+
+# ===================================
+# Package Managers (Optional - not used in this project)
+# ===================================
+# CocoaPods (not used)
 # Pods/
-# Add this line if you want to avoid checking in source code from the Xcode workspace
-# *.xcworkspace
+# Podfile.lock
 
-# Carthage
-# Add this line if you want to avoid checking in source code from Carthage dependencies.
+# Carthage (not used)
 # Carthage/Checkouts
+# Carthage/Build/
 
-#Carthage/Build/
-
-# Accio dependency management
+# Accio (not used)
 Dependencies/
 .accio/
 
-# fastlane
-# It is recommended to not store the screenshots in the git repo.
-# Instead, use fastlane to re-generate the screenshots whenever they are needed.
-# For more information about the recommended setup visit:
-# https://docs.fastlane.tools/best-practices/source-control/#source-control
+# ===================================
+# Development Tools
+# ===================================
+# Playgrounds
+timeline.xctimeline
+playground.xcworkspace
 
+# Fastlane
 fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots/**/*.png
 fastlane/test_output
 
-# Code Injection
-# After new code Injection tools there's a generated folder /iOSInjectionProject
-# https://github.com/johnno1962/injectionforxcode
-
+# Code Injection tools
 iOSInjectionProject/
 
-# End of https://www.toptal.com/developers/gitignore/api/swift
+# ===================================
+# IDE & Editor Files
+# ===================================
+# VS Code
+.vscode/
+*.code-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# ===================================
+# macOS System Files
+# ===================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# ===================================
+# Temporary & Log Files
+# ===================================
+*.log
+*.tmp
+*.temp
+*~.nib
+*.swiftdoc
+
+# ===================================
+# Documentation Generation
+# ===================================
+docs/
+*.generated.md
+
+# ===================================
+# Testing & Coverage
+# ===================================
+# XCTest results
+*.xcresult/
+
+# Code coverage
+*.profraw
+*.profdata
+Coverage.profdata
+
+# ===================================
+# Security & Secrets
+# ===================================
+# API keys and secrets
+secrets.plist
+*.keys
+*.secrets
+.env
+.env.local
+.env.production
+
+# Certificates and provisioning profiles
+*.mobileprovision
+*.p12
+*.cer
+*.certSigningRequest
+
+# ===================================
+# Project-Specific Exclusions
+# ===================================
+# Dynamic Forms specific temporary files
+temp_forms/
+test_data/
+*.debug.json
+
+# Local configuration overrides
+local.xcconfig
+dev.xcconfig
+
+# ===================================
+# Performance & Analytics
+# ===================================
+# Instruments data
+*.trace
+
+# Firebase (if used in future)
+GoogleService-Info.plist
+google-services.json
+
+# ===================================
+# Comments for Team Reference
+# ===================================
+# What we DO track:
+# ✅ Package.resolved - for reproducible builds
+# ✅ Our local SPM packages in Packages/ folder
+# ✅ Project and workspace files
+# ✅ JSON form assets
+# ✅ Source code and resources
+#
+# What we DON'T track:
+# ❌ User-specific Xcode settings
+# ❌ Build artifacts and derived data
+# ❌ Temporary and cache files
+# ❌ IDE-specific configurations
+# ❌ System files (.DS_Store, etc.)
