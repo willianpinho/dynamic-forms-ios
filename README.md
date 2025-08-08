@@ -302,10 +302,10 @@ dynamic-forms-ios/
 
 ```bash
 # Run all tests
-xcodebuild test -scheme DynamicForms -destination 'platform=iOS Simulator,name=iPhone 15'
+xcodebuild test -scheme DynamicForms -destination 'platform=iOS Simulator,name=iPhone 16'
 
 # Run specific test target
-xcodebuild test -scheme DynamicForms -destination 'platform=iOS Simulator,name=iPhone 15' -only-testing:DomainTests
+xcodebuild test -scheme DynamicForms -destination 'platform=iOS Simulator,name=iPhone 16' -only-testing:DomainTests
 ```
 
 ### Comprehensive Test Coverage
