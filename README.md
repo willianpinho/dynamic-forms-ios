@@ -318,16 +318,6 @@ The project maintains high-quality standards with extensive testing:
 - **ViewModel Tests**: State management and user interaction testing
 - **Utility Tests**: Validation, formatting, and extension function tests
 
-#### Integration Tests
-- **Core Data Tests**: Database operations with in-memory testing
-- **Data Flow Tests**: End-to-end data persistence validation
-- **Mapper Tests**: Entity-to-model transformation verification
-
-#### SwiftUI Tests
-- **Component Tests**: Form field rendering and interaction
-- **Navigation Tests**: Screen transition validation
-- **State Tests**: Reactive state management verification
-
 ## 📈 Performance and Optimizations
 
 ### SwiftUI Optimizations
