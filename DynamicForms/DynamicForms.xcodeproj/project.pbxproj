@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		03EC6112FFD18D0DE59FC358 /* DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = 368BD3D1E5159E9702541E4C /* DesignSystem */; };
+		14B1086A3BF19AD695A9801C /* DynamicFormsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = "TEMP_E50095FD-236B-4C2F-A295-7CBD50D78F0F" /* DynamicFormsApp.swift */; };
 		1B54BAC20ABF13D52322A7DE /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E151D0FAA8B993B686FD6C /* DIContainer.swift */; };
 		319BCF9200C6FF28EFEA6E80 /* FormDetailFeature in Frameworks */ = {isa = PBXBuildFile; productRef = 3B56FED9296936476CE6901D /* FormDetailFeature */; };
 		4299857CE9E2EA090D6DA3C0 /* FormListFeature in Frameworks */ = {isa = PBXBuildFile; productRef = DB35E8C44F8510317B000964 /* FormListFeature */; };
@@ -18,7 +19,6 @@
 		85FB831513EEA30274A61410 /* DataMapper in Frameworks */ = {isa = PBXBuildFile; productRef = 61C297BFFEDADA1AC0D1B2C7 /* DataMapper */; };
 		87A20FCC449F2BC80FDAB700 /* Utilities in Frameworks */ = {isa = PBXBuildFile; productRef = 36EAC9108A33EF932F460459 /* Utilities */; };
 		9A45BCD8C2495F4D3003833E /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C6F5B7E286A67D603F9161 /* AppCoordinator.swift */; };
-		AB62F7DC7723C086120FEC71 /* DynamicFormsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = "TEMP_F5597705-FB7F-423E-A175-C7E8F67CDA2E" /* DynamicFormsApp.swift */; };
 		CA9162E61408285809C75F59 /* FormEntriesFeature in Frameworks */ = {isa = PBXBuildFile; productRef = 91C9E7539EEA9E0014DD7337 /* FormEntriesFeature */; };
 		D55CD17DAD1FD3BE09EBA646 /* DynamicFormsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6585B1144FA2219F5476C8A8 /* DynamicFormsTests.swift */; };
 		E8B3779245846495379E9888 /* DynamicFormsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C27CD9C08E06114727983C /* DynamicFormsUITests.swift */; };
@@ -63,7 +63,7 @@
 		E9C4F1659BAF6061B3C77575 /* DataRepository */ = {isa = PBXFileReference; lastKnownFileType = folder; name = DataRepository; path = Packages/Data/DataRepository; sourceTree = SOURCE_ROOT; };
 		F21292A4ACDF47CD40064037 /* FormEntriesFeature */ = {isa = PBXFileReference; lastKnownFileType = folder; name = FormEntriesFeature; path = Packages/Features/FormEntriesFeature; sourceTree = SOURCE_ROOT; };
 		FDA178BCC14E79B802D7C593 /* FormListFeature */ = {isa = PBXFileReference; lastKnownFileType = folder; name = FormListFeature; path = Packages/Features/FormListFeature; sourceTree = SOURCE_ROOT; };
-		"TEMP_F5597705-FB7F-423E-A175-C7E8F67CDA2E" /* DynamicFormsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicFormsApp.swift; sourceTree = "<group>"; };
+		"TEMP_E50095FD-236B-4C2F-A295-7CBD50D78F0F" /* DynamicFormsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicFormsApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,10 +168,10 @@
 			path = DI;
 			sourceTree = "<group>";
 		};
-		"TEMP_2EF27C9B-60CD-458F-AB0C-6B4D696FBA1D" /* DynamicForms */ = {
+		"TEMP_5039AC82-2693-459D-8B14-6AE504A8284C" /* DynamicForms */ = {
 			isa = PBXGroup;
 			children = (
-				"TEMP_F5597705-FB7F-423E-A175-C7E8F67CDA2E" /* DynamicFormsApp.swift */,
+				"TEMP_E50095FD-236B-4C2F-A295-7CBD50D78F0F" /* DynamicFormsApp.swift */,
 				F5D334FAA4AFA7EB3C200486 /* DI */,
 				96DF51A1E6FA8A5DC306B46E /* Navigation */,
 			);
@@ -341,7 +341,7 @@
 			files = (
 				9A45BCD8C2495F4D3003833E /* AppCoordinator.swift in Sources */,
 				1B54BAC20ABF13D52322A7DE /* DIContainer.swift in Sources */,
-				AB62F7DC7723C086120FEC71 /* DynamicFormsApp.swift in Sources */,
+				14B1086A3BF19AD695A9801C /* DynamicFormsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

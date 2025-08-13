@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
+   <FileRef
+      location = "group:DynamicForms/DynamicForms.xcodeproj">
+   </FileRef>
    <Group
       location = "container:"
       name = "Packages">
@@ -54,7 +57,4 @@
          </FileRef>
       </Group>
    </Group>
-   <FileRef
-      location = "group:DynamicForms/DynamicForms/DynamicForms.xcodeproj">
-   </FileRef>
 </Workspace>
