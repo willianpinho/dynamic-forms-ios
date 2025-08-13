@@ -51,7 +51,7 @@ DerivedData/
 Package.pins
 
 # Xcode-generated SPM files
-*.xcodeproj
+# *.xcodeproj - COMMENTED: We're using XcodeGen, so we need to track the generated .xcodeproj
 # Note: Our project structure uses local packages, so we want to track them
 
 # ===================================
@@ -199,3 +199,5 @@ google-services.json
 # ❌ Temporary and cache files
 # ❌ IDE-specific configurations
 # ❌ System files (.DS_Store, etc.)
+# Allow the main app project (not needed anymore since we commented out *.xcodeproj)
+# !DynamicForms/DynamicForms.xcodeproj/

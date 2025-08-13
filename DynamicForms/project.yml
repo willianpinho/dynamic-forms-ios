@@ -1,0 +1,159 @@
+name: DynamicForms
+options:
+  bundleIdPrefix: com.example
+  deploymentTarget:
+    iOS: "16.0"
+  createIntermediateGroups: true
+  developmentLanguage: en
+  xcodeVersion: "15.0"
+
+packages:
+  Domain:
+    path: Packages/Domain
+  DataRepository:
+    path: Packages/Data/DataRepository
+  DataLocal:
+    path: Packages/Data/DataLocal
+  DataMapper:
+    path: Packages/Data/DataMapper
+  DesignSystem:
+    path: Packages/Core/DesignSystem
+  UIComponents:
+    path: Packages/Core/UIComponents
+  Utilities:
+    path: Packages/Core/Utilities
+  TestUtils:
+    path: Packages/Core/TestUtils
+  FormListFeature:
+    path: Packages/Features/FormListFeature
+  FormEntriesFeature:
+    path: Packages/Features/FormEntriesFeature
+  FormDetailFeature:
+    path: Packages/Features/FormDetailFeature
+
+targets:
+  DynamicForms:
+    type: application
+    platform: iOS
+    deploymentTarget: "16.0"
+    postCompileScripts:
+      - script: |
+          echo "Copying JSON resources to app bundle..."
+          if [ -d "${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app" ]; then
+            cp "${PROJECT_DIR}/200-form.json" "${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/" || echo "Failed to copy 200-form.json"
+            cp "${PROJECT_DIR}/all-fields.json" "${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/" || echo "Failed to copy all-fields.json"
+            echo "JSON files copied successfully"
+          else
+            echo "App bundle not found, skipping JSON copy"
+          fi
+        name: "Copy JSON Resources"
+        shell: /bin/bash
+    sources:
+      - path: .
+        includes:
+          - "*.swift"
+          - "DI/*.swift"
+          - "Navigation/*.swift"
+        excludes:
+          - "DynamicFormsTests/**"
+          - "DynamicFormsUITests/**"
+          - "Packages/**"
+          - "Package.swift"
+          - "project.yml"
+          - "*.json"
+          - "Assets.xcassets"
+    resources:
+      - path: Assets.xcassets
+      - path: 200-form.json
+      - path: all-fields.json
+    dependencies:
+      - package: Domain
+        product: Domain
+      - package: DataRepository
+        product: DataRepository
+      - package: DataLocal
+        product: DataLocal
+      - package: DataMapper
+        product: DataMapper
+      - package: DesignSystem
+        product: DesignSystem
+      - package: UIComponents
+        product: UIComponents
+      - package: Utilities
+        product: Utilities
+      - package: FormListFeature
+        product: FormListFeature
+      - package: FormEntriesFeature
+        product: FormEntriesFeature
+      - package: FormDetailFeature
+        product: FormDetailFeature
+    entitlements:
+      path: DynamicForms.entitlements
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.example.dynamicforms
+        INFOPLIST_FILE: Info.plist
+        ENABLE_PREVIEWS: YES
+        DEVELOPMENT_ASSET_PATHS: "."
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        IPHONEOS_DEPLOYMENT_TARGET: 16.0
+        SWIFT_VERSION: 5.9
+        TARGETED_DEVICE_FAMILY: "1,2"
+        MARKETING_VERSION: 1.0.0
+        CURRENT_PROJECT_VERSION: 1
+
+  DynamicFormsTests:
+    type: bundle.unit-test
+    platform: iOS
+    deploymentTarget: "16.0"
+    sources:
+      - path: DynamicFormsTests
+    dependencies:
+      - target: DynamicForms
+      - package: TestUtils
+        product: TestUtils
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.example.dynamicforms.tests
+        TEST_HOST: $(BUILT_PRODUCTS_DIR)/DynamicForms.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DynamicForms
+        BUNDLE_LOADER: $(TEST_HOST)
+
+  DynamicFormsUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    deploymentTarget: "16.0"
+    sources:
+      - path: DynamicFormsUITests
+    dependencies:
+      - target: DynamicForms
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.example.dynamicforms.uitests
+        TEST_TARGET_NAME: DynamicForms
+
+schemes:
+  DynamicForms:
+    build:
+      targets:
+        DynamicForms: all
+        DynamicFormsTests: [test]
+        DynamicFormsUITests: [test]
+    run:
+      config: Debug
+      commandLineArguments:
+        "-FIRAnalyticsDebugEnabled": true
+    test:
+      config: Debug
+      targets:
+        - DynamicFormsTests
+        - DynamicFormsUITests
+      gatherCoverageData: true
+      coverageTargets:
+        - DynamicForms
+    profile:
+      config: Release
+    analyze:
+      config: Debug
+    archive:
+      config: Release

@@ -15,13 +15,15 @@ let package = Package(
     dependencies: [
         .package(path: "../DesignSystem"),
         .package(path: "../Utilities"),
+        .package(path: "../../Domain"),
     ],
     targets: [
         .target(
             name: "UIComponents",
             dependencies: [
                 "DesignSystem",
-                "Utilities"
+                "Utilities",
+                "Domain"
             ],
             path: "Sources"
         ),

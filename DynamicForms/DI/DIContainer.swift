@@ -14,10 +14,6 @@ public final class DIContainer {
     // MARK: - Core Dependencies
     private lazy var logger: Logger = ConsoleLogger()
     
-    // MARK: - SwiftData Dependencies (iOS 17+)
-    @available(iOS 17.0, *)
-    private lazy var swiftDataStack: SwiftDataStack = SwiftDataStack.shared
-    
     // MARK: - Core Data Dependencies (Fallback)
     private lazy var coreDataStack: CoreDataStack = CoreDataStack.shared
     
@@ -25,7 +21,7 @@ public final class DIContainer {
     private lazy var formRepository: FormRepository = {
         if #available(iOS 17.0, *) {
             return FormRepositorySwiftData(
-                swiftDataStack: swiftDataStack,
+                swiftDataStack: SwiftDataStack.shared,
                 logger: logger
             )
         } else {
@@ -39,7 +35,7 @@ public final class DIContainer {
     private lazy var formEntryRepository: FormEntryRepository = {
         if #available(iOS 17.0, *) {
             return FormEntryRepositorySwiftData(
-                swiftDataStack: swiftDataStack,
+                swiftDataStack: SwiftDataStack.shared,
                 logger: logger
             )
         } else {
